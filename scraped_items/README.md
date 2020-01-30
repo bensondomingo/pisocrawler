@@ -1,0 +1,1 @@
+All scraped items from spiders will be stored here.
