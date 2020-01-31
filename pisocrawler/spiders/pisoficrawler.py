@@ -84,7 +84,7 @@ class PisoficrawlerSpider(scrapy.Spider):
         Parses remote link of the device and completes the item loading
         process from previous callback. Also added crawl timestamp.
         '''
-        remote = response.xpath('//a[@class="btn-link"]/@href').extract_first()
+        remote = response.xpath('//a[@class="btn-link"]/text()').extract_first()
         loader.add_value('remote', remote)
         loader.add_value(
             'updated_at', datetime.now().strftime('%m/%d/%y %H:%M:%S'))
